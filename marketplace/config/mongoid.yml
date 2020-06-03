@@ -1,0 +1,7 @@
+development:
+  clients:
+    default:
+      uri: mongodb+srv://dbuser:dbpass@cluster0-tywqg.mongodb.net/test?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
+
