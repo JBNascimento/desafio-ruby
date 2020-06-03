@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
   <strong>Name:</strong>
   <%= @store.name %>
@@ -19,6 +21,26 @@
   <strong>Email:</strong>
   <%= @store.email %>
 </p>
+
+
+
+<section class="section products">
+  <div class="container">
+    <h2 class="subtitle is-5">
+      <strong><%= @store.products.count %></strong> products
+    </h2>
+    <%= render @store.products %>
+    <div class="comment-form">
+      <hr />
+      <h3 class="subtitle is-3">Create a product</h3>
+      <%= render partial: 'products/form', locals: { product: @store.products.build } %>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>

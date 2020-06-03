@@ -1,0 +1,12 @@
+<p>
+  <strong><%= product.name %>
+  <strong><%= product.price %>
+  <strong><%= product.installments %>
+
+  
+<br>
+<%= link_to 'Delete', [product],
+  method: :delete,
+  class: "button is-danger",
+  data: { confirm: 'Are you sure?' } %>
+</p>
