@@ -303,6 +303,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari-mongoid
   listen (~> 3.2)
+  mini_magick
   mongoid (~> 7.0.5)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.1)

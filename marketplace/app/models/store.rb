@@ -6,5 +6,4 @@ class Store
   field :email, type: String
   has_many :products, dependent: :destroy
   mount_uploader :logo, LogoUploader
-
 end
