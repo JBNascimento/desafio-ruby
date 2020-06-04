@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
+<h2 class=""> <%= @store.name %> </h2> 
+
+<div class="container">
+<form role="form" action="/">
+    <h2 class="">Encontrando Produtos</h2>
+    <input type="text" class="form-control" placeholder="Ex: Relógio" name="keywords">
+    <br>
+    <button class="btn btn-primary btn-block" type="submit">Procurar</button>
+    <br>
+  </form>  
+</div>
+
 
 
 
@@ -30,18 +42,15 @@
     <h2 class="subtitle is-5">
       <strong><%= @store.products.count %></strong> products
     </h2>
-    <%= render @store.products %>
-    <div class="comment-form">
-      <hr />
-      <h3 class="subtitle is-3">Create a product</h3>
-      <%= render partial: 'products/form', locals: { product: @store.products.build } %>
-    </div>
+    <%= render @store.products %>    
   </div>
 </section>
 
 
 
 
-
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>
+
+
+
