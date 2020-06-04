@@ -1,12 +1,8 @@
 <p>
-  <strong><%= product.name %>
-  <strong><%= product.price %>
-  <strong><%= product.installments %>
-
-  
-<br>
-<%= link_to 'Delete', [product],
-  method: :delete,
-  class: "button is-danger",
-  data: { confirm: 'Are you sure?' } %>
+  <div class="col-3 product" >
+    <%= image_tag(product.image_url(:thumb).to_s) %>      
+    <h5><%= product.name %></h5>
+    <span class="price"> R$ <%= product.price %></span>
+    <span class="installments"> <%= product.installments %>x  R$<%= product.price / product.installments %> </span>
+  </div>
 </p>
