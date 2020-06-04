@@ -30,5 +30,8 @@
   <%= @product.store_id %>
 </p>
 
+<%= image_tag(@product.image_url.to_s) %>
+
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

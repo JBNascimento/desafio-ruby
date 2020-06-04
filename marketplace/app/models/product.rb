@@ -6,4 +6,5 @@ class Product
   field :image, type: String
   field :url, type: String
   belongs_to :store
+  mount_uploader :image, ImageUploader
 end
