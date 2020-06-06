@@ -1,51 +1,26 @@
-<nav class="navbar navbar-expand-md navbar-light  bg-light main-nav">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse flex-1">
-            <ul class="nav navbar-nav w-100">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">HOMEM</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">MULHER</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">KIDS</a>
-                </li>
-            </ul>
-        </div>
-        <div class="order-first order-md-0 d-flex justify-content-center">
-            <a class="navbar-brand mx-0" href="#"><%= image_tag(@store.logo_url(:thumb).to_s) %></a>
-        </div>
-        <div class="collapse navbar-collapse flex-1">
-            <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LOGIN</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CARRINHO</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<%= render partial: "navbar" %>
 
-  <form role="form" action="/" class="form-inline my-2 my-lg-0" id="search-form">
-      <input type="text" class="form-control" placeholder="Ex: Relógio" name="keywords">
-      
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Procurar</button>
-      <br>
-  </form>  
+
+
+<div class="container">
+  <div class="row justify-content-end">
+    <div class="col-4">
+
+  <p id="notice"><%= notice %></p>
+ 
+  <%= form_tag search_store_products_path([@store.id]), method: :get, class: "form-inline my-2 my-lg-0", id:"search-form", role: "search" do %>
+    <p>
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder:"Ex: Relógio" %>
+        <%= submit_tag "Buscar", name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
+    </p>
+  <% end %>
+
+</div>
+  </div>
 
 
   <section class="section products">  
-      <h2 class="subtitle is-5">
-        <strong><%= @store.products.count %></strong> products
-      </h2>
+
       <div class="row align-items-start products-list" >
         <%= render @store.products %>   
       </div>  

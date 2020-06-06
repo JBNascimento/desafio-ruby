@@ -1,8 +1,11 @@
+
 <p>
-  <div class="col-3 product" >
-    <%= image_tag(product.image_url(:thumb).to_s) %>      
-    <h5><%= product.name %></h5>
+  <div class="col-3 product">    
+    <%= image_tag(product.image_url(:thumb).to_s) %>  
+    <%= link_to(product.url) do %>   
+      <h5><%= product.name %></h5>    
     <span class="price"> R$ <%= product.price %></span>
-    <span class="installments"> <%= product.installments %>x  R$<%= product.price / product.installments %> </span>
+    <span class="installments"> <%= product.installments %>x  R$<%= product.price / product.installments %> </span>  
+    <% end %>
   </div>
 </p>

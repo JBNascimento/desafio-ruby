@@ -7,6 +7,20 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  
+  def search 
+    if params[:search].present?    
+
+      @products = Product.search params[:search], where: {store_id: params[:store_id]}
+      
+    else      
+      
+      @products = Product.where(store_id: params[:store_id])
+      # redirect_to(root_path) and return  
+      
+    end
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
