@@ -5,7 +5,7 @@
 
 .price,
 .installments{
-    color: #7a1315;
+    color: #7a1315 !important;
     font-size: 16px;;
     font-weight: bold;
     display: block;
@@ -23,6 +23,14 @@
     font-weight: bold;
 }
 
+.product h5 {
+    color: #111;    
+}
+
 .product h5:hover{
-    color: #000;    
+    color: #666;    
+}
+
+a:hover{
+    background-color: transparent !important;
 }

@@ -8,6 +8,4 @@ class Store
   mount_uploader :logo, LogoUploader
   
   searchkick
-  
-
 end

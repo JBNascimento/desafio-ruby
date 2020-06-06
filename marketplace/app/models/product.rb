@@ -14,6 +14,6 @@ class Product
     { 
       name: name,
       store_id: store.id.to_s
-  }
+    }
   end
 end

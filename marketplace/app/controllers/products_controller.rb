@@ -10,14 +10,10 @@ class ProductsController < ApplicationController
   
   def search 
     if params[:search].present?    
-
-      @products = Product.search params[:search], where: {store_id: params[:store_id]}
-      
-    else      
-      
+      @products = Product.search params[:search], where: {store_id: params[:store_id]}      
+    else            
       @products = Product.where(store_id: params[:store_id])
-      # redirect_to(root_path) and return  
-      
+      # redirect_to(root_path) and return        
     end
   end
 
